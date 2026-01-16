@@ -1,0 +1,71 @@
+/* Reset and base styles for QR Menu */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* System font stack for fast loading */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Light mode by default for outdoor readability */
+  color-scheme: light;
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Touch optimization */
+  -webkit-tap-highlight-color: rgba(196, 52, 45, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography for outdoor readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid #c4342d;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(196, 52, 45, 0.2);
+  color: #1a1a1a;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Disable user select on interactive elements for better mobile UX */
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
