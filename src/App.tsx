@@ -44,12 +44,6 @@ function App() {
         <p className="header__subtitle">{MENU_SUBTITLE}</p>
       </header>
 
-      {/* Info Strip */}
-      <div className="info-strip">
-        <span className="info-strip__text">🍽️ Tap a card to view options</span>
-        <span className="info-strip__divider">•</span>
-        <span className="info-strip__text">Prices as listed (LKR)</span>
-      </div>
 
       {/* Search Bar */}
       <div className="search-container">
