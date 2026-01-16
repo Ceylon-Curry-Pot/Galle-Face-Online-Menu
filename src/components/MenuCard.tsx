@@ -6,8 +6,11 @@ interface MenuCardProps {
 }
 
 export function MenuCard({ category }: MenuCardProps) {
+  const cardClasses = `menu-card${category.isSpecial ? ' menu-card--special' : ''}`;
+  
   return (
-    <article className="menu-card">
+    <article className={cardClasses}>
+      {category.isSpecial && <span className="menu-card__badge">⭐ Special</span>}
       <h2 className="menu-card__title">{category.category}</h2>
       <ul className="menu-card__list">
         {category.items.map((item, index) => (

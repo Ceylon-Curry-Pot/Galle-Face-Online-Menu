@@ -6,9 +6,15 @@ export interface MenuItem {
 export interface MenuCategory {
   category: string;
   items: MenuItem[];
+  isSpecial?: boolean;
 }
 
 export const MENU_DATA: MenuCategory[] = [
+  {
+    category: "ROAST PAAN KOTTU",
+    items: [{ label: "POK", price: 900 }],
+    isSpecial: true
+  },
   {
     category: "KOTTU",
     items: [
@@ -34,10 +40,6 @@ export const MENU_DATA: MenuCategory[] = [
       { label: "CHI", price: 500 },
       { label: "SEA", price: 800 }
     ]
-  },
-  {
-    category: "ROAST PAAN KOTTU",
-    items: [{ label: "POK", price: 900 }]
   },
   {
     category: "GARLIC RICE",
