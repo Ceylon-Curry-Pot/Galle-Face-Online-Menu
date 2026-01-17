@@ -3,6 +3,7 @@ import ChiKottuImg from '../assets/Menu-Images/Kottu-Chicken.jpeg';
 import CheeseKottuImg from '../assets/Menu-Images/CheeseKottu-Chicken.jpeg';
 import FriedRiceImg from '../assets/Menu-Images/FriedRice-Sea.jpeg';
 import GarlicRiceImg from '../assets/Menu-Images/Garlic-Rice.jpeg';
+import AddOnImg from '../assets/Menu-Images/Add-on.png';
 
 export interface MenuItem {
   label: string;
@@ -60,6 +61,7 @@ export const MENU_DATA: MenuCategory[] = [
   },
   {
     category: "ADD ON",
+    imageUrl: AddOnImg,
     items: [
       { label: "CHICKEN WHOLE LEG", price: 800 },
       { label: "JUMBO SAUSAGE", price: 200 },
