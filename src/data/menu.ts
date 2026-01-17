@@ -34,7 +34,7 @@ export const MENU_DATA: MenuCategory[] = [
     category: "KOTTU",
     imageUrl: ChiKottuImg,
     items: [
-      { label: "VEG", price: 400 },
+      { label: "VEGETABLE", price: 400 },
       { label: "EGG", price: 400 },
       { label: "CHICKEN", price: 500 },
       { label: "PORK", price: 900 }
@@ -44,7 +44,7 @@ export const MENU_DATA: MenuCategory[] = [
     category: "CHEESE KOTTU",
     imageUrl: CheeseKottuImg,
     items: [
-      { label: "VEG", price: 800 },
+      { label: "VEGETABLE", price: 800 },
       { label: "EGG", price: 800 },
       { label: "CHICKEN", price: 900 }
     ]
@@ -53,10 +53,10 @@ export const MENU_DATA: MenuCategory[] = [
     category: "FRIED RICE",
     imageUrl: FriedRiceImg,
     items: [
-      { label: "VEG", price: 400 },
+      { label: "VEGETABLE", price: 400 },
       { label: "EGG", price: 400 },
       { label: "CHICKEN", price: 500 },
-      { label: "SEA", price: 800 }
+      { label: "SEA FOOD", price: 800 }
     ]
   },
   {

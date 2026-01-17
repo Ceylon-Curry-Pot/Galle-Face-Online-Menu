@@ -21,14 +21,19 @@
   position: relative;
   width: 100%;
   max-width: none;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
 }
 
 .header__image {
   display: block;
   width: 100%;
-  height: 220px;
-  object-fit: fill;
-  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
   box-shadow: none;
 }
 
@@ -247,10 +252,22 @@
   .header {
     padding: 1rem 1.75rem;
   }
+
+  .header__image {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .header {
     padding: 1.25rem 2.25rem;
+  }
+
+  .header__image {
+    width: 50%;
+    height: 220px;
+    border-radius: 0.75rem;
   }
 }
