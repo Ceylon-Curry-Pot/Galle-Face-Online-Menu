@@ -6,33 +6,57 @@
 
 /* Sticky Header */
 .header {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 100;
-  background: linear-gradient(135deg, #c4342d 0%, #a82822 100%);
-  color: white;
-  padding: 1rem 1.25rem;
-  text-align: center;
+  background: #c81c1c;
+  padding: 0.75rem 1.25rem;
   transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
 }
 
 .header--scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+.header__content {
+  position: relative;
+  width: min(100%, 960px);
+}
+
+.header__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex-box;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  color: #000000;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
 .header__title {
-  font-size: 1.5rem;
+  margin: 0;
+  font-size: clamp(1.0rem, 2vw, 2.6rem);
   font-weight: 800;
-  margin: 0 0 0.25rem 0;
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .header__subtitle {
-  font-size: 0.9rem;
   margin: 0;
-  opacity: 0.95;
-  font-weight: 500;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  opacity: 0.92;
 }
 
 /* Info Strip */
@@ -222,24 +246,12 @@
 /* Responsive header adjustments */
 @media (min-width: 640px) {
   .header {
-    padding: 1.25rem 1.5rem;
-  }
-
-  .header__title {
-    font-size: 1.75rem;
-  }
-
-  .header__subtitle {
-    font-size: 1rem;
+    padding: 1rem 1.75rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .header__title {
-    font-size: 2rem;
-  }
-
-  .header__subtitle {
-    font-size: 1.1rem;
+  .header {
+    padding: 1.25rem 2.25rem;
   }
 }
