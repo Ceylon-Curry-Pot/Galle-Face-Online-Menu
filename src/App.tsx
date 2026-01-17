@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { MenuCard } from './components/MenuCard';
 import { MENU_DATA, MENU_TITLE, MENU_SUBTITLE } from './data/menu';
+import headerBanner from './assets/header-banner.png';
 import './App.css';
 
 function App() {
@@ -24,13 +25,13 @@ function App() {
 
   const filteredCategories = useMemo(() => {
     if (!searchQuery.trim()) return MENU_DATA;
-    
+
     const query = searchQuery.toLowerCase().trim();
     return MENU_DATA.filter(category => {
       // Match category name
       if (category.category.toLowerCase().includes(query)) return true;
       // Match any item label
-      return category.items.some(item => 
+      return category.items.some(item =>
         item.label.toLowerCase().includes(query)
       );
     });
@@ -39,9 +40,21 @@ function App() {
   return (
     <div className="app">
       {/* Sticky Header */}
-      <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
-        <h1 className="header__title">{MENU_TITLE}</h1>
-        <p className="header__subtitle">{MENU_SUBTITLE}</p>
+      <header
+        className={`header ${isScrolled ? 'header--scrolled' : ''}`}
+        aria-label={`${MENU_TITLE} banner`}
+      >
+        <div className="header__content">
+          <img
+            src={headerBanner}
+            alt={`${MENU_TITLE} - ${MENU_SUBTITLE}`}
+            className="header__image"
+          />
+          <div className="header__overlay" aria-hidden="true">
+            {/* <h1 className="header__title">{MENU_TITLE}</h1>
+            <p className="header__subtitle">{MENU_SUBTITLE}</p> */}
+          </div>
+        </div>
       </header>
 
 
@@ -56,7 +69,7 @@ function App() {
           aria-label="Search menu items"
         />
         {searchQuery && (
-          <button 
+          <button
             className="search-clear"
             onClick={() => setSearchQuery('')}
             aria-label="Clear search"
