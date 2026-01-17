@@ -1,19 +1,22 @@
 import type { MenuCategory } from '../data/menu';
 import './MenuCard.css';
 
-interface MenuCardProps {
-  category: MenuCategory;
-}
-
-export function MenuCard({ category }: MenuCardProps) {
-  const cardClasses = `menu-card${category.isSpecial ? ' menu-card--special' : ''}`;
-  
+export const MenuCard: React.FC<{ category: MenuCategory }> = ({ category }) => {
+  const { category: title, items, isSpecial, imageUrl } = category;
   return (
-    <article className={cardClasses}>
-      {category.isSpecial && <span className="menu-card__badge">⭐ Special</span>}
-      <h2 className="menu-card__title">{category.category}</h2>
+    <article className={`menu-card ${isSpecial ? 'menu-card--special' : ''}`}>
+      {imageUrl && (
+        <img
+          className="menu-card__image"
+          src={imageUrl}
+          alt={`${title} menu`}
+          loading="lazy"
+        />
+      )}
+      {isSpecial && <span className="menu-card__badge">⭐ Special</span>}
+      <h2 className="menu-card__title">{title}</h2>
       <ul className="menu-card__list">
-        {category.items.map((item, index) => (
+        {items.map((item, index) => (
           <li key={index} className="menu-card__item">
             <span className="menu-card__label">{item.label}</span>
             <span className="menu-card__price">{`Rs. ${item.price}.00`}</span>
@@ -22,4 +25,4 @@ export function MenuCard({ category }: MenuCardProps) {
       </ul>
     </article>
   );
-}
+};
